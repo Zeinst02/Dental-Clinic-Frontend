@@ -1,0 +1,914 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f5fbfd;
+  color: #123f52;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eefafd, #f9fdfe);
+}
+
+.login-card {
+  width: 420px;
+  background: white;
+  padding: 45px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(18, 63, 82, 0.12);
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  border-radius: 20px;
+  background: #e2f6fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
+.login-card h1 {
+  text-align: center;
+  margin: 0 0 10px;
+  color: #123f52;
+  font-size: 38px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.subtitle {
+  text-align: center;
+  color: #7894a3;
+  margin-bottom: 32px;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-card label {
+  margin-bottom: 8px;
+  color: #31586a;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border: 1px solid #d8e8ed;
+  border-radius: 11px;
+  background: #ffffff;
+  color: #123f52;
+  font-size: 15px;
+  outline: none;
+}
+
+.login-card input:focus {
+  border-color: #13a0b8;
+  box-shadow: 0 0 0 3px rgba(19, 160, 184, 0.1);
+}
+
+.login-card input::placeholder {
+  color: #91a7b1;
+  opacity: 1;
+}
+
+.login-card button[type="submit"] {
+  border: none;
+  padding: 14px;
+  border-radius: 11px;
+  background: #079ab4;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login-card button[type="submit"]:hover {
+  background: #078aa2;
+}
+.login-error-message {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #fff1f1;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.error-message {
+  color: #e05252;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 28px;
+  color: #91a7b1;
+  font-size: 13px;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+  min-height: 100vh;
+  display: flex;
+  background: #f5fbfd;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 310px;
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 38px 25px 28px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #edf4f6;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 8px;
+  margin-bottom: 55px;
+}
+
+.brand-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  background: #e2f6fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 39px;
+}
+
+.brand h2 {
+  margin: 0;
+  color: #073c52;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+.brand span {
+  display: block;
+  margin-top: 5px;
+  color: #7894a3;
+  font-size: 15px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-item {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 16px 18px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #587287;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-item span {
+  width: 25px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.nav-item:hover {
+  background: #f0fafc;
+  color: #079ab4;
+}
+
+.nav-item.active {
+  background: #e4f6fa;
+  color: #079ab4;
+  font-weight: 600;
+}
+
+/* =========================
+   LOGOUT
+========================= */
+
+.logout-button {
+  margin-top: auto;
+  border: none;
+  border-top: 1px solid #e5eef1;
+  background: transparent;
+  padding: 25px 10px 5px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #e45b5b;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.logout-button span {
+  font-size: 25px;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+  flex: 1;
+  padding: 38px 45px 55px;
+  overflow-x: hidden;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.welcome-small {
+  margin: 0 0 7px;
+  color: #7894a3;
+  font-size: 16px;
+}
+
+.topbar h1 {
+  margin: 0;
+  color: #083f55;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.7px;
+}
+
+/* =========================
+   MINI PROFILE
+   (display only — the sidebar "Profile" item is the one
+   and only way into the profile page, no second entry point)
+========================= */
+
+.profile-mini {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.profile-mini .avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #079ab4;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.profile-mini strong {
+  display: block;
+  color: #17465b;
+  font-size: 15px;
+  text-align: left;
+}
+
+.profile-mini span {
+  display: block;
+  margin-top: 4px;
+  color: #7894a3;
+  font-size: 13px;
+  text-align: left;
+}
+
+/* =========================
+   STAT CARDS
+========================= */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  min-height: 110px;
+  background: white;
+  border-radius: 18px;
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  box-shadow: 0 8px 25px rgba(36, 92, 110, 0.06);
+}
+
+.stat-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.stat-icon.blue {
+  background: #e1f5fa;
+  color: #079ab4;
+}
+
+.stat-icon.green {
+  background: #e5f8ef;
+  color: #18ad6b;
+}
+
+.stat-icon.red {
+  background: #fdebed;
+  color: #e05a5a;
+}
+
+.stat-card span {
+  display: block;
+  color: #7894a3;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.stat-card strong {
+  color: #08445c;
+  font-size: 28px;
+}
+
+/* =========================
+   APPOINTMENTS CARD
+   (this is now the only card on the dashboard — no more
+   second column, so it gets the full width and the focus)
+========================= */
+
+.appointments-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(36, 92, 110, 0.06);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.section-header h2 {
+  margin: 0 0 6px;
+  color: #083f55;
+  font-size: 25px;
+}
+
+.section-header p {
+  margin: 0;
+  color: #7894a3;
+  font-size: 15px;
+}
+
+.book-button {
+  border: none;
+  background: #079ab4;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.book-button:hover {
+  background: #078aa2;
+}
+
+/* =========================
+   APPOINTMENT LIST
+========================= */
+
+.appointment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.appointment-item {
+  min-height: 103px;
+  border: 1px solid #dcecf0;
+  border-radius: 14px;
+  padding: 20px 23px;
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  align-items: center;
+  gap: 25px;
+}
+
+.appointment-date {
+  border-right: 1px solid #dcecf0;
+}
+
+.appointment-date strong {
+  display: block;
+  color: #0a4258;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.appointment-date span {
+  color: #079ab4;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.doctor-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.doctor-avatar {
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  background: #e3f6fa;
+  color: #079ab4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.doctor-info strong {
+  display: block;
+  color: #17465b;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.doctor-info span {
+  color: #7894a3;
+  font-size: 14px;
+}
+
+.appointment-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.status {
+  padding: 9px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status.confirmed {
+  background: #e4f8ed;
+  color: #16a764;
+}
+
+.status.completed {
+  background: #e1f5fa;
+  color: #079ab4;
+}
+
+.status.cancelled {
+  background: #fdebed;
+  color: #e05a5a;
+}
+
+.cancel-button {
+  border: none;
+  background: #fff1f2;
+  color: #dc2626;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cancel-button:hover {
+  background: #fee2e2;
+}
+
+.complete-button {
+  border: none;
+  background: #e4f8ed;
+  color: #16a764;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.complete-button:hover {
+  background: #d3f2e0;
+}
+
+/* =========================
+   AVAILABILITY (doctor's working hours)
+========================= */
+
+.availability-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.availability-item {
+  display: grid;
+  grid-template-columns: 130px 1fr auto;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #dcecf0;
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+
+.availability-day {
+  color: #0a4258;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.availability-time {
+  color: #079ab4;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.availability-form {
+  border-top: 1px solid #e5eef1;
+  padding-top: 26px;
+}
+
+.availability-form h3 {
+  margin: 0 0 18px;
+  color: #083f55;
+  font-size: 17px;
+}
+
+.availability-form label {
+  display: block;
+  color: #31586a;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.availability-form select,
+.availability-form input {
+  width: 100%;
+  height: 48px;
+  padding: 0 15px;
+  margin-bottom: 18px;
+  border: 1px solid #d8e8ed;
+  border-radius: 11px;
+  background: white;
+  color: #123f52;
+  font-size: 15px;
+  outline: none;
+}
+
+.availability-form select:focus,
+.availability-form input:focus {
+  border-color: #079ab4;
+  box-shadow: 0 0 0 3px rgba(7, 154, 180, 0.1);
+}
+
+/* =========================
+   PROFILE INFO
+   (shared by the standalone Profile page)
+========================= */
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile-info span {
+  color: #7894a3;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.profile-info strong {
+  color: #10455b;
+  font-size: 15px;
+  word-break: break-word;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+  text-align: center;
+  padding: 45px 20px;
+  color: #7894a3;
+}
+
+.empty-state > div {
+  font-size: 48px;
+  margin-bottom: 15px;
+  opacity: 0.65;
+}
+
+.empty-state h3 {
+  color: #496b7d;
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.empty-state p {
+  margin: 0 0 22px;
+  font-size: 14px;
+}
+
+.empty-state .book-button {
+  padding: 13px 24px;
+}
+
+/* =========================
+   BOOKING / APPOINTMENTS / PROFILE PAGES
+========================= */
+
+.booking-page {
+  min-height: 100vh;
+  background: #f5fbfd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.booking-card {
+  width: 650px;
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 15px 45px rgba(36, 92, 110, 0.08);
+}
+
+.back-button {
+  border: none;
+  background: transparent;
+  color: #079ab4;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+.back-button:hover {
+  color: #078aa2;
+}
+
+.booking-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.booking-icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 18px;
+  background: #e2f6fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  flex-shrink: 0;
+}
+
+.booking-header h1 {
+  margin: 0 0 6px;
+  color: #073c52;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.booking-header p {
+  margin: 0;
+  color: #7894a3;
+  font-size: 15px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-form label {
+  color: #31586a;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.booking-form select,
+.booking-form input {
+  width: 100%;
+  height: 48px;
+  padding: 0 15px;
+  margin-bottom: 22px;
+  border: 1px solid #d8e8ed;
+  border-radius: 11px;
+  background: white;
+  color: #123f52;
+  font-size: 15px;
+  outline: none;
+}
+
+.booking-form select:focus,
+.booking-form input:focus {
+  border-color: #079ab4;
+  box-shadow: 0 0 0 3px rgba(7, 154, 180, 0.1);
+}
+
+.check-button {
+  width: 100%;
+  border: none;
+  padding: 15px;
+  border-radius: 11px;
+  background: #079ab4;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.check-button:hover {
+  background: #078aa2;
+}
+
+.booking-message {
+  margin: 18px 0 0;
+  padding: 14px;
+  border-radius: 10px;
+  background: #e4f6fa;
+  color: #07536a;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .sidebar {
+    width: 240px;
+  }
+
+  .main-content {
+    padding: 30px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 750px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .brand {
+    margin-bottom: 20px;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .nav-item {
+    white-space: nowrap;
+  }
+
+  .logout-button {
+    margin-top: 20px;
+  }
+
+  .main-content {
+    padding: 25px 18px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .topbar h1 {
+    font-size: 28px;
+  }
+
+  .profile-mini {
+    display: none;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .appointment-item {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .appointment-date {
+    border-right: none;
+    border-bottom: 1px solid #dcecf0;
+    padding-bottom: 12px;
+  }
+
+  .availability-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
